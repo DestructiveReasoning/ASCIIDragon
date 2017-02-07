@@ -5,8 +5,8 @@ public class AsciiDragon {
 	public static final int LEFT	= 2;
 	public static final int DOWN	= 3;
 
-	public static final int WIDTH	= 160;
-	public static final int HEIGHT	= 50;
+	public static final int WIDTH	= 180;
+	public static final int HEIGHT	= 58;
 
 	public static void main(String [] args) {
 		if(args.length < 1) {
@@ -27,15 +27,16 @@ public class AsciiDragon {
 		String canvas[] = new String[HEIGHT];
 		int dir = RIGHT;
 		for(int c = 0; c < HEIGHT; c++) {
+			canvas[c] = "";
 			for(int j = 0; j < WIDTH; j++) {
 				canvas[c] += " ";
 			}
 		}
 		int x, y;
-		x = WIDTH/2;
-		y = HEIGHT/2;
+		x = WIDTH/4;
+		y = 3*HEIGHT/4;
 		String sequence = getSequence(n);
-		System.out.println("Sequence: " + sequence);
+//		System.out.println("Sequence: " + sequence);
 		char[] tail = canvas[y].toCharArray();
 		tail[x] = '_';
 		tail[x+1] = '_';
@@ -140,7 +141,7 @@ public class AsciiDragon {
 		for(int c = 0; c < HEIGHT; c++) {
 			dragon += canvas[c] + "\n";
 		}
-		System.out.println("Count: " + count + ", Sequence Length: " + sequence.length());
+//		System.out.println("Count: " + count + ", Sequence Length: " + sequence.length());
 		return dragon;
 	}
 
